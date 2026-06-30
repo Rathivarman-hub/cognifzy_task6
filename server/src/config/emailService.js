@@ -1,24 +1,5 @@
 import { google } from 'googleapis';
 
-/**
- * Gmail API OAuth2 Email Service
- *
- * Setup Steps:
- * 1. Go to https://console.cloud.google.com/ and create a new project.
- * 2. Enable "Gmail API" from APIs & Services > Library.
- * 3. Go to APIs & Services > Credentials > Create Credentials > OAuth Client ID.
- *    - Application type: Web application
- *    - Add Authorized redirect URI: https://developers.google.com/oauthplayground
- * 4. Copy Client ID and Client Secret into your .env file.
- * 5. Go to https://developers.google.com/oauthplayground
- *    - Click the gear icon ⚙️ (top right) → check "Use your own OAuth credentials"
- *    - Paste your Client ID and Client Secret.
- *    - In Step 1, select scope: https://mail.google.com/
- *    - Click "Authorize APIs" → sign in with your Gmail account.
- *    - Click "Exchange authorization code for tokens".
- *    - Copy the Refresh Token into your .env file.
- * 6. Set GMAIL_SENDER_EMAIL in .env to the Gmail address you authorized.
- */
 
 const oAuth2Client = new google.auth.OAuth2(
   process.env.GMAIL_CLIENT_ID,
