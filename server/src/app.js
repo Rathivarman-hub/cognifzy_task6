@@ -24,6 +24,8 @@ connectDB();
 
 const app = express();
 
+// Trust proxy for Render deployment to fix express-rate-limit error
+app.set('trust proxy', 1);
 // Rate limiting
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
